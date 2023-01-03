@@ -1,8 +1,7 @@
 use std::env;
 
 fn main() {
-    let str_odds: Vec<String> = env::args().skip(1).collect();
-    let odds: Vec<f64> = str_odds.into_iter().map(|a| {a.parse::<f64>().unwrap()}).collect();
+    let odds: Vec<f64> = env::args().skip(1).map(|a| {a.parse::<f64>().unwrap()}).collect();
     if odds.len() < 6 {
         return;
     }
